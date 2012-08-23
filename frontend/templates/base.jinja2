@@ -18,13 +18,280 @@
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
+    <div class="header-block">
+        {% if params.index %}
+        <img src="{{params.imgUrn}}/logo.jpg" width="136" height="45" alt="NERD">
+        {% else %}
+        <a href="/" class="home-link"><img src="{{params.imgUrn}}/logo.jpg" width="136" height="45" alt="NERD"></a>
+        {% endif %}
+        <nav>
+            <a href=""><span>Tags</span></a>
+            <a href=""><span>Add Video</span></a>
+            <a href=""><span>Loved Video's</span></a>
+            <a href=""><span>About</span></a>
+        </nav>
 
+        <form action="" method="GET" class="searchbox">
+            <label>
+              <input type="search" name="search" value="Search" id="search_input">
+            </label>
+        </form>
+
+        <a href="" class="message" id="message">
+            <img src="{{params.imgUrn}}/message_icon_gray_22x22.png" width="22" height="22" alt="">
+        </a>
+
+        <a href="" class="notification" id="notification">
+            <img src="{{params.imgUrn}}/notify_gray_22x22.png" width="22" height="22"  alt="">
+        </a>
+
+        <div class="userbar">
+            <div class="userbar-avatar">
+                <img src="{{params.imgUrn}}/user_avatar_big_30x30.png" width="30" height="30">
+                <ul class="avatar-menu bordered-block">
+                    <li><a href="">My Settings</a></li>
+                    <li><a href="">Sign Out</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <a href="">Andrei Bourdine</a>
+                <span>
+                    <img src="{{params.imgUrn}}/header_list_arrow.gif" width="9" height="5" alt="">
+                </span>
+            </div>
+        </div>
+    </div>
   </header>
+
   {% block content %}
   <div class="content" role="main"></div>
   {% endblock %}
-  <footer>
 
+  
+  <aside>
+    <div class="login">
+      <span id="sign_in_anchor" class="side_tab helv side_tab__active">Sign In</span>
+      <span id="register_anchor" class="side_tab helv">Register</span>
+
+      <div id="sign_in" class="side_login_container">
+        <form action="#" method="POST" id="sign_in_form" class="helv">
+          <label for="name">YOUR EMAIL:</label>
+          <div class="side_error right helv">THIS EMAIL IS NOT REGISTERED</div>
+          <input type="text" name="email" id="name">
+
+          <label for="password">YOUR PASSWORD:</label>
+          <div class="side_error right helv">THIS PASSWORD IS INCORRECT</div>
+          <input type="password" name="password" id="password">
+
+          <div class="button_center button_center__top_shift">
+            <div class="button_border button_border__big">
+              <button class="blue_btn helv">Sign In</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="register" class="side_login_container nodisplay">
+          <form action="#" method="POST" id="register_form" class="helv">
+            <label for="reg_name">YOUR FIRST AND SECOND NAME:</label>
+            <div class="side_error right helv">THIS FIELD IS REQUIRED</div>
+            <input type="text" name="email" id="reg_name">
+
+            <label for="reg_mail">YOUR EMAIL:</label>
+            <div class="side_error right helv">THIS EMAIL IS REGISTERED</div>
+            <input type="text" name="email" id="reg_mail">
+
+            <label for="reg_password">YOUR PASSWORD:</label>
+            <div class="side_error right helv">THIS FIELD IS REQUIRED</div>
+            <input type="password" name="password" id="reg_password">
+
+            <label for="reg_password_confirm">YOUR PASSWORD:</label>
+            <div class="side_error right helv">THIS FIELD IS REQUIRED</div>
+            <input type="password" name="password" id="reg_password_confirm">
+
+            <div class="button_center button_center__top_shift">
+              <div class="button_border button_border__big">
+                <button class="blue_btn helv">Register</button>
+              </div>
+            </div>
+          </form>
+      </div>
+
+      <div class="sign_with">
+        <img src="img/or.png" width="35" height="26" class="or">
+
+        <div class="button_center">
+          <div class="button_border button_border__bottom_space">
+            <a href="#" class="soc_link">
+              <div class="helv soc_log_in soc_log_in__fb">
+                <div>
+                  <img src="img/fb_icon.png" width="8" height="17">
+                </div>
+                <i class="vertical_line"></i>
+                <p>Sign In With Facebook</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="button_border button_border__bottom_space">
+            <a href="#" class="soc_link">
+              <div class="helv soc_log_in soc_log_in__tw">
+                <div>
+                  <img src="img/tw_icon.png" width="16" height="13">
+                </div>
+                <i class="vertical_line"></i>
+                <p>Sign In With Twitter</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="button_border button_border__bottom_space">
+            <a href="#" class="soc_link">
+              <div class="helv soc_log_in soc_log_in__gp">
+                <div>
+                  <img src="img/gp_icon.png" width="16" height="14">
+                </div>
+                <i class="vertical_line"></i>
+                <p>Sign In With Google+</p>
+              </div>
+            </a>
+          </div>
+          
+          <a href="#" class="helv forgot_passwd">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="side_video_block">
+        <p class="more helv">More <b>Intro Video’s</b></p>
+        <div class="side_video_line">
+          <div class="side_video_with_signature left">
+            <div class="side_video nice_border_bro">
+              <span class="left side_date">18.11.2011</span>
+              <span class="right side_category">Demo / Music</span>
+
+              <img src="img/side_video.jpg" width="121" height="68">
+
+              <span class="company helv left"><a href="#">swagapalooza.com</a></span>
+              <div class="ratio">
+                <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
+                <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
+                <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+              </div>
+            </div>
+            <div class="signature helv">
+              <a href="#">
+                <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                Greggory McKinzy
+              </a>
+            </div>
+          </div>
+          <div class="side_video_with_signature right">
+              <div class="side_video nice_border_bro">
+                <span class="left side_date">18.11.2011</span>
+                <span class="right side_category">Demo / Music</span>
+
+                <img src="img/side_video.jpg" width="121" height="68">
+
+                <span class="company helv left"><a href="#">swagapalooza.com</a></span>
+                <div class="ratio">
+                  <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
+                  <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
+                  <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+                </div>
+              </div>
+              <div class="signature helv">
+                <a href="#">
+                  <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                  Greggory McKinzy
+                </a>
+              </div>
+          </div>
+        </div>
+
+        <div class="side_wrapper"></div>
+
+        <p class="more helv">More <b>Tour Video’s</b></p>
+        <div class="side_video_line">
+            <div class="side_video_with_signature left">
+              <div class="side_video nice_border_bro">
+                <span class="left side_date">18.11.2011</span>
+                <span class="right side_category">Demo / Music</span>
+
+                <img src="img/side_video.jpg" width="121" height="68">
+
+                <span class="company helv left"><a href="#">swagapalooza.com</a></span>
+                <div class="ratio">
+                  <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
+                  <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
+                  <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+                </div>
+              </div>
+              <div class="signature helv">
+                <a href="#">
+                  <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                  Greggory McKinzy
+                </a>
+              </div>
+            </div>
+            <div class="side_video_with_signature right">
+              <div class="side_video nice_border_bro">
+                <span class="left side_date">18.11.2011</span>
+                <span class="right side_category">Demo / Music</span>
+
+                <img src="img/side_video.jpg" width="121" height="68">
+
+                <span class="company helv left"><a href="#">swagapalooza.com</a></span>
+                <div class="ratio">
+                  <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
+                  <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
+                  <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+                </div>
+              </div>
+              <div class="signature helv">
+                <a href="#">
+                  <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                  Greggory McKinzy
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side_wrapper"></div>
+    <p class="more helv">More <b>Popular Tags</b></p>
+    <div class="tags helv">
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Social Graph</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+      <a href="#" class="nice_border_bro">Privacy</a>
+    </div>
+  </aside>
+  
+  <footer>
+    <div class="footer-container">
+        <div class="nav-and-copyright">
+            <nav>
+                <a href="#">About/Contacts</a>
+                <a href="#">Terms of Use</a>
+            </nav>
+            <p>Copyright &copy; 2011 Nerd. All videos &copy; their respective owners.</p>
+            <p>Made in Kolomna, Russia and Lisbon, Portugal via WeekendHacker. Hosted by (RackSpace).</p>
+            <p>Follow us on: Google+, Twitter and Facebook.</p>
+        </div>
+
+        <div class="view-counter-container">
+            <span>2.500.987 plays</span>
+            <img src="img/footer_logo.gif" width="136" height="34" alt="NERD">
+        </div>
+    </div>
   </footer>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
