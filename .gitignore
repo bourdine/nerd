@@ -1,0 +1,8 @@
+frontend/.sass-cache
+frontend/build
+frontend/build.zip
+frontend/*.pyc
+frontend/*.html
+frontend/css
+frontend/node_modules
+nerd.sublime-*
