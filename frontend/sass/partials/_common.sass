@@ -1,0 +1,30 @@
+$black: #000
+$white: #fff
+
+@mixin blocksLine
+  text-align: justify
+  text-justify: newspaper
+
+@mixin blocksLineFull
+  line-height: 0
+  font-size: 1px
+  +blocksLine
+
+@mixin red
+  color: $red
+
+@mixin black
+  color: $black
+
+@mixin arialFamily
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+
+.content
+  overflow: hidden
+
+.clear
+  clear: both
+
+.helper
+  display: inline-block
+  width: 100%
