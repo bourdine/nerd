@@ -64,156 +64,112 @@
     </div>
   </header>
 
-  {% block content %}
-  <div class="content" role="main"></div>
-  {% endblock %}
+  <div class="main-container row-fluid">
+    {% block content %}
+    <div class="content span8" role="main"></div>
+    {% endblock %}
 
-  
-  <aside>
-    <div class="login">
-      <span id="sign_in_anchor" class="side_tab helv side_tab__active">Sign In</span>
-      <span id="register_anchor" class="side_tab helv">Register</span>
+    <aside class="span4">
+      <div class="login">
+        <div class="tab-container">
+          <div id="sign-in-tab" class="side-tab side-tab__active">Sign In</div>
+          <div id="register-tab" class="side-tab">Register</div>
+        </div>
 
-      <div id="sign_in" class="side_login_container">
-        <form action="#" method="POST" id="sign_in_form" class="helv">
-          <label for="name">YOUR EMAIL:</label>
-          <div class="side_error right helv">THIS EMAIL IS NOT REGISTERED</div>
-          <input type="text" name="email" id="name">
+        <div id="sign-in" class="side-login-container">
+          <form action="#" method="POST" id="sign_in_form" class="row-fluid side-form">
+            <label for="name">YOUR EMAIL:</label>
+            <span class="form-tip form-tip__error">THIS EMAIL IS NOT REGISTERED</span>
+            <input type="text" name="email" id="name" placeholder="ex. john@gmail.com">
 
-          <label for="password">YOUR PASSWORD:</label>
-          <div class="side_error right helv">THIS PASSWORD IS INCORRECT</div>
-          <input type="password" name="password" id="password">
-
-          <div class="button_center button_center__top_shift">
-            <div class="button_border button_border__big">
-              <button class="blue_btn helv">Sign In</button>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <div id="register" class="side_login_container nodisplay">
-          <form action="#" method="POST" id="register_form" class="helv">
-            <label for="reg_name">YOUR FIRST AND SECOND NAME:</label>
-            <div class="side_error right helv">THIS FIELD IS REQUIRED</div>
-            <input type="text" name="email" id="reg_name">
-
-            <label for="reg_mail">YOUR EMAIL:</label>
-            <div class="side_error right helv">THIS EMAIL IS REGISTERED</div>
-            <input type="text" name="email" id="reg_mail">
-
-            <label for="reg_password">YOUR PASSWORD:</label>
-            <div class="side_error right helv">THIS FIELD IS REQUIRED</div>
-            <input type="password" name="password" id="reg_password">
-
-            <label for="reg_password_confirm">YOUR PASSWORD:</label>
-            <div class="side_error right helv">THIS FIELD IS REQUIRED</div>
-            <input type="password" name="password" id="reg_password_confirm">
+            <label for="password">YOUR PASSWORD:</label>
+            <span class="form-tip form-tip__error">THIS PASSWORD IS INCORRECT</span>
+            <input type="password" name="password" id="password" placeholder="">
 
             <div class="button_center button_center__top_shift">
               <div class="button_border button_border__big">
-                <button class="blue_btn helv">Register</button>
+                <button class="blue_btn helv">Sign In</button>
               </div>
             </div>
           </form>
-      </div>
-
-      <div class="sign_with">
-        <img src="img/or.png" width="35" height="26" class="or">
-
-        <div class="button_center">
-          <div class="button_border button_border__bottom_space">
-            <a href="#" class="soc_link">
-              <div class="helv soc_log_in soc_log_in__fb">
-                <div>
-                  <img src="img/fb_icon.png" width="8" height="17">
-                </div>
-                <i class="vertical_line"></i>
-                <p>Sign In With Facebook</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="button_border button_border__bottom_space">
-            <a href="#" class="soc_link">
-              <div class="helv soc_log_in soc_log_in__tw">
-                <div>
-                  <img src="img/tw_icon.png" width="16" height="13">
-                </div>
-                <i class="vertical_line"></i>
-                <p>Sign In With Twitter</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="button_border button_border__bottom_space">
-            <a href="#" class="soc_link">
-              <div class="helv soc_log_in soc_log_in__gp">
-                <div>
-                  <img src="img/gp_icon.png" width="16" height="14">
-                </div>
-                <i class="vertical_line"></i>
-                <p>Sign In With Google+</p>
-              </div>
-            </a>
-          </div>
-          
-          <a href="#" class="helv forgot_passwd">Forgot Password?</a>
         </div>
-      </div>
-    </div>
 
-    <div class="side_video_block">
-        <p class="more helv">More <b>Intro Video’s</b></p>
-        <div class="side_video_line">
-          <div class="side_video_with_signature left">
-            <div class="side_video nice_border_bro">
-              <span class="left side_date">18.11.2011</span>
-              <span class="right side_category">Demo / Music</span>
+        <div id="register" class="side-login-container hide">
+            <form action="#" method="POST" id="register-form" class="row-fluid side-form">
+              <label for="reg-name">YOUR FIRST AND SECOND NAME:</label>
+              <div class="form-tip form-tip__error">THIS FIELD IS REQUIRED</div>
+              <input type="text" name="name" id="reg-name" placeholder="John Smith">
 
-              <img src="img/side_video.jpg" width="121" height="68">
+              <label for="reg-mail">YOUR EMAIL:</label>
+              <div class="form-tip form-tip__error">THIS EMAIL IS REGISTERED</div>
+              <input type="text" name="email" id="reg-mail" placeholder="ex. john@gmail.com">
 
-              <span class="company helv left"><a href="#">swagapalooza.com</a></span>
-              <div class="ratio">
-                <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
-                <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
-                <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+              <label for="reg-password">YOUR PASSWORD:</label>
+              <div class="form-tip form-tip__error">THIS FIELD IS REQUIRED</div>
+              <input type="password" name="password" id="reg-password">
+
+              <label for="reg-password-confirm">YOUR PASSWORD:</label>
+              <div class="form-tip form-tip__error">THIS FIELD IS REQUIRED</div>
+              <input type="password" name="password-confirm" id="reg-password-confirm">
+
+              <div class="button_center button_center__top_shift">
+                <div class="button_border button_border__big">
+                  <button class="blue_btn helv">Register</button>
+                </div>
               </div>
-            </div>
-            <div class="signature helv">
-              <a href="#">
-                <img src="img/user_avatar_small_13x13.png" width="13" height="13">
-                Greggory McKinzy
+            </form>
+        </div>
+
+        <div class="soc-auth">
+          <img src="{{params.imgUrn}}/or.png" width="35" height="26" class="or" alt="or">
+
+          <div class="button_center">
+            <div class="button_border button_border__bottom_space">
+              <a href="#" class="soc_link">
+                <div class="helv soc_log_in soc_log_in__fb">
+                  <div>
+                    <img src="img/fb_icon.png" width="8" height="17">
+                  </div>
+                  <i class="vertical_line"></i>
+                  <p>Sign In With Facebook</p>
+                </div>
               </a>
             </div>
-          </div>
-          <div class="side_video_with_signature right">
-              <div class="side_video nice_border_bro">
-                <span class="left side_date">18.11.2011</span>
-                <span class="right side_category">Demo / Music</span>
 
-                <img src="img/side_video.jpg" width="121" height="68">
-
-                <span class="company helv left"><a href="#">swagapalooza.com</a></span>
-                <div class="ratio">
-                  <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
-                  <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
-                  <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+            <div class="button_border button_border__bottom_space">
+              <a href="#" class="soc_link">
+                <div class="helv soc_log_in soc_log_in__tw">
+                  <div>
+                    <img src="img/tw_icon.png" width="16" height="13">
+                  </div>
+                  <i class="vertical_line"></i>
+                  <p>Sign In With Twitter</p>
                 </div>
-              </div>
-              <div class="signature helv">
-                <a href="#">
-                  <img src="img/user_avatar_small_13x13.png" width="13" height="13">
-                  Greggory McKinzy
-                </a>
-              </div>
+              </a>
+            </div>
+
+            <div class="button_border button_border__bottom_space">
+              <a href="#" class="soc_link">
+                <div class="helv soc_log_in soc_log_in__gp">
+                  <div>
+                    <img src="img/gp_icon.png" width="16" height="14">
+                  </div>
+                  <i class="vertical_line"></i>
+                  <p>Sign In With Google+</p>
+                </div>
+              </a>
+            </div>
+            
+            <p>
+              <a href="#" class="helv forgot_passwd">Forgot Password?</a>
+            </p>
           </div>
         </div>
+      </div>
 
-        <div class="side_wrapper"></div>
-
-        <p class="more helv">More <b>Tour Video’s</b></p>
-        <div class="side_video_line">
+      <!-- <div class="side_video_block">
+          <p class="more helv">More <b>Intro Video’s</b></p>
+          <div class="side_video_line">
             <div class="side_video_with_signature left">
               <div class="side_video nice_border_bro">
                 <span class="left side_date">18.11.2011</span>
@@ -236,45 +192,94 @@
               </div>
             </div>
             <div class="side_video_with_signature right">
-              <div class="side_video nice_border_bro">
-                <span class="left side_date">18.11.2011</span>
-                <span class="right side_category">Demo / Music</span>
+                <div class="side_video nice_border_bro">
+                  <span class="left side_date">18.11.2011</span>
+                  <span class="right side_category">Demo / Music</span>
 
-                <img src="img/side_video.jpg" width="121" height="68">
+                  <img src="img/side_video.jpg" width="121" height="68">
 
-                <span class="company helv left"><a href="#">swagapalooza.com</a></span>
-                <div class="ratio">
-                  <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
-                  <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
-                  <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+                  <span class="company helv left"><a href="#">swagapalooza.com</a></span>
+                  <div class="ratio">
+                    <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
+                    <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
+                    <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+                  </div>
+                </div>
+                <div class="signature helv">
+                  <a href="#">
+                    <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                    Greggory McKinzy
+                  </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="side_wrapper"></div>
+
+          <p class="more helv">More <b>Tour Video’s</b></p>
+          <div class="side_video_line">
+              <div class="side_video_with_signature left">
+                <div class="side_video nice_border_bro">
+                  <span class="left side_date">18.11.2011</span>
+                  <span class="right side_category">Demo / Music</span>
+
+                  <img src="img/side_video.jpg" width="121" height="68">
+
+                  <span class="company helv left"><a href="#">swagapalooza.com</a></span>
+                  <div class="ratio">
+                    <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
+                    <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
+                    <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+                  </div>
+                </div>
+                <div class="signature helv">
+                  <a href="#">
+                    <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                    Greggory McKinzy
+                  </a>
                 </div>
               </div>
-              <div class="signature helv">
-                <a href="#">
-                  <img src="img/user_avatar_small_13x13.png" width="13" height="13">
-                  Greggory McKinzy
-                </a>
-              </div>
-            </div>
-        </div>
-    </div>
+              <div class="side_video_with_signature right">
+                <div class="side_video nice_border_bro">
+                  <span class="left side_date">18.11.2011</span>
+                  <span class="right side_category">Demo / Music</span>
 
-    <div class="side_wrapper"></div>
-    <p class="more helv">More <b>Popular Tags</b></p>
-    <div class="tags helv">
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Social Graph</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-      <a href="#" class="nice_border_bro">Privacy</a>
-    </div>
-  </aside>
-  
+                  <img src="img/side_video.jpg" width="121" height="68">
+
+                  <span class="company helv left"><a href="#">swagapalooza.com</a></span>
+                  <div class="ratio">
+                    <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
+                    <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
+                    <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
+                  </div>
+                </div>
+                <div class="signature helv">
+                  <a href="#">
+                    <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                    Greggory McKinzy
+                  </a>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="side_wrapper"></div>
+      <p class="more helv">More <b>Popular Tags</b></p>
+      <div class="tags helv">
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Social Graph</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+        <a href="#" class="nice_border_bro">Privacy</a>
+      </div> -->
+    </aside>
+  </div>
+
   <footer>
     <div class="footer-container">
         <div class="nav-and-copyright">
