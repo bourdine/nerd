@@ -1,3 +1,64 @@
 {
-    "imgUrn": "img"
+    "imgUrn": "img",
+    "videos": [
+        {
+            "date": "18.11.2011",
+            "category": "Demo/Music",
+            "preview": "video.jpg",
+            "length": "1:26",
+            "organization": "swagapalooza.com",
+            "ratio": {
+                "views": "1M 420K",
+                "comments": "250",
+                "likes": "341"
+            },
+            "autor": {
+                "name": "Greggory McKinzy",
+                "link": "#",
+                "avatar": "user_avatar_small_13x13.png"
+            }
+        }
+    ],
+    "tags": [
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Social Graph",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        },
+        {
+          "name": "Privacy",
+          "link": ""
+        }
+    ]
 }

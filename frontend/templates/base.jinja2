@@ -70,7 +70,7 @@
     {% endblock %}
 
     <aside class="span4">
-      <div class="login">
+      <div class="side-block">
         <div class="tab-container">
           <div id="sign-in-tab" class="side-tab side-tab__active">Sign In</div>
           <div id="register-tab" class="side-tab">Register</div>
@@ -160,123 +160,125 @@
               </a>
             </div>
             
-            <p>
-              <a href="#" class="helv forgot_passwd">Forgot Password?</a>
+            <p class="forgot-passwd">
+              <a href="#">Forgot Password?</a>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- <div class="side_video_block">
-          <p class="more helv">More <b>Intro Video’s</b></p>
-          <div class="side_video_line">
-            <div class="side_video_with_signature left">
-              <div class="side_video nice_border_bro">
-                <span class="left side_date">18.11.2011</span>
-                <span class="right side_category">Demo / Music</span>
+      <div class="side-block row-fluid">
+        <p class="side-header">More <a href="">Intro Video’s</a></p>
 
-                <img src="img/side_video.jpg" width="121" height="68">
-
-                <span class="company helv left"><a href="#">swagapalooza.com</a></span>
-                <div class="ratio">
-                  <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
-                  <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
-                  <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
-                </div>
+        {% for iter in range(2) %}
+          <div class="video-block span6">
+            <div class="nerd-video nice_border_bro">
+              <div class="info">
+                <span class="date">
+                  {{params.videos[0].date}}
+                </span>
+                <span class="category">
+                  {{params.videos[0].category}}
+                </span>
               </div>
-              <div class="signature helv">
-                <a href="#">
-                  <img src="img/user_avatar_small_13x13.png" width="13" height="13">
-                  Greggory McKinzy
-                </a>
+
+              <a href="" class="preview">
+                <img src="{{params.imgUrn}}/{{params.videos[0].preview}}">
+                <div class="video-timer">{{params.videos[0].length}}</div>
+              </a>
+
+              <p class="organization">
+                <a href="#">{{params.videos[0].organization}}</a>
+              </p>
+
+              <div class="ratio">
+                <div>
+                  <img src="{{params.imgUrn}}/eye_icon_12x12.png" width="12" height="12">
+                  {{params.videos[0].ratio.views}}
+                </div>
+                <div>
+                  <img src="{{params.imgUrn}}/comments_icon_12x12.png" width="12" height="12">
+                  {{params.videos[0].ratio.comments}}
+                </div>
+                <div>
+                  <img src="{{params.imgUrn}}/loved_icon_12x12.png" width="12" height="12">
+                  {{params.videos[0].ratio.likes}} Likes
+                </div>
               </div>
             </div>
-            <div class="side_video_with_signature right">
-                <div class="side_video nice_border_bro">
-                  <span class="left side_date">18.11.2011</span>
-                  <span class="right side_category">Demo / Music</span>
 
-                  <img src="img/side_video.jpg" width="121" height="68">
-
-                  <span class="company helv left"><a href="#">swagapalooza.com</a></span>
-                  <div class="ratio">
-                    <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
-                    <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
-                    <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
-                  </div>
-                </div>
-                <div class="signature helv">
-                  <a href="#">
-                    <img src="img/user_avatar_small_13x13.png" width="13" height="13">
-                    Greggory McKinzy
-                  </a>
-                </div>
+            <div class="signature">
+              <a href="#">
+                <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                Greggory McKinzy
+              </a>
             </div>
           </div>
+        {% endfor %}
 
-          <div class="side_wrapper"></div>
+        <div class="side-wrapper"></div>
 
-          <p class="more helv">More <b>Tour Video’s</b></p>
-          <div class="side_video_line">
-              <div class="side_video_with_signature left">
-                <div class="side_video nice_border_bro">
-                  <span class="left side_date">18.11.2011</span>
-                  <span class="right side_category">Demo / Music</span>
+        <p class="side-header">More <a href="">Tour Video’s</a></p>
 
-                  <img src="img/side_video.jpg" width="121" height="68">
+        {% for iter in range(2) %}
+          <div class="video-block span6">
+            <div class="nerd-video nice_border_bro">
+              <div class="info">
+                <span class="date">
+                  {{params.videos[0].date}}
+                </span>
+                <span class="category">
+                  {{params.videos[0].category}}
+                </span>
+              </div>
 
-                  <span class="company helv left"><a href="#">swagapalooza.com</a></span>
-                  <div class="ratio">
-                    <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
-                    <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
-                    <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
-                  </div>
+              <a href="" class="preview">
+                <img src="{{params.imgUrn}}/{{params.videos[0].preview}}">
+                <div class="video-timer">{{params.videos[0].length}}</div>
+              </a>
+
+              <p class="organization">
+                <a href="#">{{params.videos[0].organization}}</a>
+              </p>
+
+              <div class="ratio">
+                <div>
+                  <img src="{{params.imgUrn}}/eye_icon_12x12.png" width="12" height="12">
+                  {{params.videos[0].ratio.views}}
                 </div>
-                <div class="signature helv">
-                  <a href="#">
-                    <img src="img/user_avatar_small_13x13.png" width="13" height="13">
-                    Greggory McKinzy
-                  </a>
+                <div>
+                  <img src="{{params.imgUrn}}/comments_icon_12x12.png" width="12" height="12">
+                  {{params.videos[0].ratio.comments}}
+                </div>
+                <div>
+                  <img src="{{params.imgUrn}}/loved_icon_12x12.png" width="12" height="12">
+                  {{params.videos[0].ratio.likes}} Likes
                 </div>
               </div>
-              <div class="side_video_with_signature right">
-                <div class="side_video nice_border_bro">
-                  <span class="left side_date">18.11.2011</span>
-                  <span class="right side_category">Demo / Music</span>
+            </div>
 
-                  <img src="img/side_video.jpg" width="121" height="68">
-
-                  <span class="company helv left"><a href="#">swagapalooza.com</a></span>
-                  <div class="ratio">
-                    <div><img src="img/eye_icon_12x12.png" width="12" height="12">1M 420K</div>
-                    <div class="comments"><img src="img/comments_icon_12x12.png" width="12" height="12">250</div>
-                    <div class="likes"><img src="img/loved_icon_12x12.png" width="12" height="12">341 Likes</div>
-                  </div>
-                </div>
-                <div class="signature helv">
-                  <a href="#">
-                    <img src="img/user_avatar_small_13x13.png" width="13" height="13">
-                    Greggory McKinzy
-                  </a>
-                </div>
-              </div>
+            <div class="signature">
+              <a href="#">
+                <img src="img/user_avatar_small_13x13.png" width="13" height="13">
+                Greggory McKinzy
+              </a>
+            </div>
           </div>
+        {% endfor %}
+
+        <div class="side-wrapper"></div>
       </div>
 
-      <div class="side_wrapper"></div>
-      <p class="more helv">More <b>Popular Tags</b></p>
-      <div class="tags helv">
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Social Graph</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-        <a href="#" class="nice_border_bro">Privacy</a>
-      </div> -->
+      <div class="side-block">
+        <p class="side-header">More <a href="">Popular Tags</a></p>
+
+        <nav class="tags">
+          {% for tag in params.tags %}
+            <a href="#">{{tag.name}}</a>
+          {% endfor %}
+        </nav>
+      </div>
+      </div>
     </aside>
   </div>
 

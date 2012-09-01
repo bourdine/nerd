@@ -1,10 +1,22 @@
 $black: #000
 $white: #fff
 $red: #f00
+$darkGray: #242424
+$gray: #444
+$lightGray: #666
+$cream: #dddee0
 
 $blockBackColor: #f1f1f1
+$blockBackLightColor: #f9f9f9
 
 $fullWidth: 970px
+
+a
+  color: $black
+  text-decoration: none
+
+  &:hover
+    color: $black
 
 @mixin blocksLine
   text-align: justify
@@ -15,20 +27,13 @@ $fullWidth: 970px
   font-size: 1px
   +blocksLine
 
-@mixin bordered-block
+@mixin borderedBlock
   background-color: #f1f1f1
   border: 1px solid #c3c3c3
   border-top-color: #f9f9f9
   border-bottom-color: #6b6b6b
   +border-radius(4px)
   +box-shadow(0 1px 1px #c5c5c5)
-
-.bordered-block
-  +bordered-block
-
-/* depricated */
-.nice_boroder_bro
-  +bordered-block
 
 @mixin red
   color: $red
@@ -41,6 +46,30 @@ $fullWidth: 970px
 
 @mixin helvaticaFamily
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+.bordered-block
+  +borderedBlock
+
+/* depricated */
+.nice_boroder_bro
+  +borderedBlock
+
+/* depricated */
+.nice_border_bro__light_bg
+  background-color: #f9f9f9
+
+.form-tip
+  display: inline-block
+  +helvaticaFamily
+  font-size: 0.5em
+  text-transform: uppercase
+  float: right
+
+.form-tip__error
+  color: $red
+
+.form-tip__hint
+  color: #494949
 
 .content
   overflow: hidden

@@ -1,8 +1,27 @@
 aside
   padding: 11px 0 0 0
 
-.login
+  .video-block
+    margin: 0 0 0 0
+
+  .category
+    font-size: 0.563em
+
+  .signature
+    margin-left: 11px
+
+  .row-fluid [class*="span"]
+    margin: 0 0 0 0
+
+  .video-block:nth-child(2n + 1)
+    margin: 0 0 0 7px
+
+  .ratio div:last-child
+    float: left
+
+.side-block
   overflow: hidden
+  margin: 0 0 8px 0
 
 .tab-container
   overflow: hidden
@@ -56,20 +75,7 @@ aside
     font-size: 1.5em
     text-indent: 5px
     color: #9c9c9c
-    padding: 2px 0
-
-.form-tip
-  display: inline-block
-  +helvaticaFamily
-  font-size: 0.5em
-  text-transform: uppercase
-  float: right
-
-.form-tip__error
-  color: $red
-
-.form-tip__hint
-  color: #494949
+    padding: 2px 0 2px 0
 
 .blue_btn
   padding: 0
@@ -135,6 +141,9 @@ aside
   z-index: 100
   background-color: $blockBackColor
 
+////////////////////
+// TODO: rewrite
+
 .soc_log_in
   text-align: left
   height: 30px
@@ -188,7 +197,6 @@ aside
   border-bottom-color: #414141
   > div
     background: image-url('gp_bg__top.gif') no-repeat top right
-    /*border-radius
     +border-radius(3px 0 0 0)
     margin-left: -33px
     width: 33px
@@ -198,129 +206,41 @@ aside
   overflow: hidden
   display: block
 
-.forgot_passwd
-  display: inline-block
+///////////////////////////
+
+.forgot-passwd
   +helvaticaFamily
   font-size: 0.75em
-  color: #000
   margin: 6px 0 10px 0
 
-.side_video_block
-  margin-top: 8px
-  overflow: hidden
-  float: left
-
-.more
+.side-header
   font-size: 0.625em
   margin-bottom: 8px
-  b
-    font-size: 0.75em
+  +helvaticaFamily
+  color: $darkGray
+  
+  a
+    font-size: 1.2em
     font-weight: bold
-
-.nice_border_bro__light_bg
-  background-color: #f9f9f9
-
-.side_video
-  width: 122px
-  text-align: center
-  padding: 0 9px 2px
-  overflow: hidden
-
-  span a
     text-decoration: none
-    color: #000
+    color: $darkGray
 
-.side_video_with_signature
-
-.side_date
-  font: 0.438em "Arial"
-  position: relative
-  top: 3px
-
-.side_date__center
-  top: 4px
-
-.side_category
-  font: 0.563em "Arial"
-
-span.company
-  font-size: 0.563em
-  margin-top: 2px
-
-.company a
-  color: #000
-  text-decoration: none
-
-span
-  &.company__center
-    font-size: 0.625em
-  &.company__gray
-    color: #524f4f
-  &.company__no_space
-    margin: 0
-    padding: 0
-
-.ratio
-  text-align: left
-  float: left
-  width: 100%
-  font: 0.625em "Arial"
-
-.ratio__center
-  width: 179px
-
-.ratio div
-  float: left
-  margin-top: 2px
-  img
-    margin: 0 5px -3px 0
-
-.comments
-  margin-left: 9px
-
-.likes, .likes__center
-
-.likes img
-  position: relative
-  top: -2px
-
-.likes__center img
-  margin-right: 3px !important
-
-.signature
-  padding: 5px 0 8px
-  margin-left: 11px
-
-.signature__center
-  float: left
-  margin-left: 0
-  a
-    color: #666
-
-.signature
-  img
-    margin-bottom: -3px
-    padding-right: 8px
-  a
-    color: #000
-    text-decoration: none
-
-.side_wrapper
-  width: 294px
+.side-wrapper
   border-top: 1px solid #d1d1d1
   border-bottom: 1px solid #fff
-  float: left
-  margin: 2px 0 7px 1px
+  margin: 2px 0 7px 0
+  clear: both
 
-.tags a
-  display: block
-  float: left
-  font-size: 0.875em
-  text-decoration: none
-  padding: 3px 11px
-  line-height: 22px
-  color: #000
-  margin: 0 3px 4px 0
-  background-color: #f9f9f9
-  img
-    margin: 0 0 -2px 8px
+.tags 
+  a
+    display: block
+    float: left
+    padding: 3px 11px 3px 11px
+    margin: 0 3px 4px 0
+    +borderedBlock
+    background-color: $blockBackLightColor
+    +helvaticaFamily
+    font-size: 0.875em
+    line-height: 1.57
+    text-decoration: none
+    color: #000
